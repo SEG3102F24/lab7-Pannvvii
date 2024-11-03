@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {Author, Book} from '../model/book';
+import {Author, Book} from '../model/author';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import {Observable} from "rxjs";
 import {map} from 'rxjs/operators';

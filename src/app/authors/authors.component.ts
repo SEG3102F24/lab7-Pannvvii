@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, Routes, RouterOutlet } from '@angular/router';
-import {BookComponent} from './book/book.component';
+import {BookComponent} from './author/author.component';
 
 export const booksRoutes: Routes = [
   {path: ':id', component: BookComponent}
@@ -8,8 +8,8 @@ export const booksRoutes: Routes = [
 
 @Component({
     selector: 'app-books',
-    templateUrl: './books.component.html',
-    styleUrls: ['./books.component.css'],
+    templateUrl: './authors.component.html',
+    styleUrls: ['./authors.component.css'],
     standalone: true,
     imports: [RouterOutlet]
 })

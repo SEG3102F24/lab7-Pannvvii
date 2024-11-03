@@ -1,15 +1,15 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Book} from '../model/book';
-import {BooksService} from '../service/books.service';
+import {Book} from '../model/author';
+import {BooksService} from '../service/author.service';
 import {Subscription} from "rxjs";
 import { AuthornamesPipe } from '../../pipes/authornames.pipe';
 import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-book',
-    templateUrl: './book.component.html',
-    styleUrls: ['./book.component.css'],
+    templateUrl: './author.component.html',
+    styleUrls: ['./author.component.css'],
     standalone: true,
     imports: [NgIf, AuthornamesPipe]
 })
