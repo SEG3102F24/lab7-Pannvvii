@@ -9,11 +9,11 @@ const Url = 'http://localhost:8080/books-api/';
 @Injectable({
   providedIn: 'root'
 })
-export class BooksService {
+export class AuthorsService {
   private http: HttpClient = inject(HttpClient);
 
-  public getBook(id: string): Observable<Book> {
-    return this.http.get<Book>(Url + 'books/' + id);
+  public getAuthor(id: string): Observable<Author> {
+    return this.http.get<Author>(Url + 'authors/' + id);
   }
 
   public addBook(book: Book): Observable<Book> {

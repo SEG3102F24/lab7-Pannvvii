@@ -1,7 +1,7 @@
-import { Book } from './author';
+import { Author } from './author';
 
-describe('Book', () => {
+describe('Author', () => {
   it('should create an instance', () => {
-    expect(new Book(1, 'test', 'test', 1)).toBeTruthy();
+    expect(new Author(1, 'test', 'test')).toBeTruthy();
   });
 });

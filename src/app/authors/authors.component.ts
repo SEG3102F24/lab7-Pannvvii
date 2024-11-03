@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, Routes, RouterOutlet } from '@angular/router';
-import {BookComponent} from './author/author.component';
+import {AuthorComponent} from './author/author.component';
 
 export const booksRoutes: Routes = [
-  {path: ':id', component: BookComponent}
+  {path: ':id', component: AuthorComponent}
 ];
 
 @Component({
@@ -13,7 +13,7 @@ export const booksRoutes: Routes = [
     standalone: true,
     imports: [RouterOutlet]
 })
-export class BooksComponent {
+export class AuthorsComponent {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   submit(value: string): void {

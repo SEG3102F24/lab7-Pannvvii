@@ -1,7 +1,7 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Book} from '../model/author';
-import {BooksService} from '../service/author.service';
+import {Author} from '../model/author';
+import {AuthorsService} from '../service/author.service';
 import {Subscription} from "rxjs";
 import { AuthornamesPipe } from '../../pipes/authornames.pipe';
 import { NgIf } from '@angular/common';
@@ -13,21 +13,21 @@ import { NgIf } from '@angular/common';
     standalone: true,
     imports: [NgIf, AuthornamesPipe]
 })
-export class BookComponent implements OnInit, OnDestroy {
-  selectedBook!: Book | null;
+export class AuthorComponent implements OnInit, OnDestroy {
+  selectedAuthor!: Author | null;
   private subscription!: Subscription;
   private route: ActivatedRoute = inject(ActivatedRoute);
-  private booksService: BooksService = inject(BooksService);
+  private authorsService: AuthorsService = inject(AuthorsService);
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const id = params['id'];
-      this.subscription = this.booksService.getBook(id).subscribe({
-        next: (data: Book) => {
-          this.selectedBook = data;
+      this.subscription = this.authorsService.getAuthor(id).subscribe({
+        next: (data: Author) => {
+          this.selectedAuthor = data;
         },
         error: (_: any) => {
-          this.selectedBook = null;
+          this.selectedAuthor = null;
         }
       });
     });
